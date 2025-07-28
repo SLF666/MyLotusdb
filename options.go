@@ -66,12 +66,12 @@ type Options struct {
 	// AutoCompactSupport support
 	AutoCompactSupport bool
 
-	// WaitMemSpaceTimeout specifies the timeout for waiting for space in the memtable.
-	// When all memtables are full, it will be flushed to disk by the background goroutine.
-	// But if the flush speed is slower than the write speed, there may be no space in the memtable.
-	// So the write operation will wait for space in the memtable, and the timeout is specified by WaitMemSpaceTimeout.
-	// If the timeout is exceeded, the write operation will fail, you can try again later.
-	// Default value is 100ms.
+	// WaitMemSpaceTimeout 指定在 memtable 中等待空间的超时时间。
+	// 当所有 memtable 均已满时，后台 goroutine 将其 flush 到磁盘。
+	// 但如果刷新速度慢于写入速度，内存表中可能没有可用空间。
+	// 因此写入操作将等待内存表中出现可用空间，超时时间由 WaitMemSpaceTimeout 指定。
+	// 如果超时，写入操作将失败，您可以稍后再试。
+	// 默认值为 100 毫秒。
 	WaitMemSpaceTimeout time.Duration
 }
 
