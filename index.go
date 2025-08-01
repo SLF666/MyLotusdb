@@ -15,6 +15,7 @@ const (
 //
 // Currently, the only implementation is a BoltDB index.
 // But you can implement your own index if you want.
+// index是个接口，可以使用不同的数据结构存储索引
 type Index interface {
 	// PutBatch put batch records to index
 	PutBatch(keyPositions []*KeyPosition, matchKeyFunc ...diskhash.MatchKeyFunc) ([]*KeyPosition, error)
