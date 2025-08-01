@@ -678,7 +678,7 @@ func (db *DB) listenDiskIOState() {
 // Compact will iterate all values in vlog, and write the valid values to a new vlog file.
 // Then replace the old vlog file with the new one, and delete the old one.
 //
-// 第一次压缩方法：遍历所有的vlog，存下它的有效数据，并替换旧的vlog（不同分区并发执行，因为不同分区的vlog不同
+// 第一次压缩方法：遍历所有的vlog，存下它的有效数据，并替换旧的vlog（不同分区并发执行
 //
 //nolint:gocognit
 func (db *DB) Compact() error {
@@ -896,6 +896,7 @@ func (db *DB) CompactWithDeprecatedtable() error {
 	return err
 }
 
+// 更新有效记录具体实现
 func (db *DB) rewriteValidRecords(walFile *wal.WAL, validRecords []*ValueLogRecord, part int) error {
 	for _, record := range validRecords {
 		walFile.PendingWrites(encodeValueLogRecord(record))
