@@ -8,6 +8,7 @@ require (
 	github.com/dgraph-io/badger/v4 v4.2.0
 	github.com/gofrs/flock v0.8.1
 	github.com/google/uuid v1.6.0
+	github.com/lotusdblabs/bbolt v1.3.9-0.20250108061345-78c23c59588d
 	github.com/lotusdblabs/lotusdb/v2 v2.1.0
 	github.com/rosedblabs/diskhash v0.0.0-20230910084041-289755737e2a
 	github.com/rosedblabs/wal v1.3.6
