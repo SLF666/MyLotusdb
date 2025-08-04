@@ -426,8 +426,6 @@ func (db *DB) waitMemtableSpace() error {
 // 4. 添加已删除的 UUID，并从索引中删除已删除的键。
 // 5. 删除 WAL。
 //
-// TODO 为什么这里只有HASH的逻辑呢
-//
 //nolint:funlen
 func (db *DB) flushMemtable(table *memtable) {
 	db.flushLock.Lock()
